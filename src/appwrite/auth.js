@@ -24,6 +24,14 @@ export class AuthService {
     return await this.account.createEmailSession(email, password);
   }
 
+  loginWithGoogle() {
+    return this.account.createOAuth2Session(
+      'google',
+      'http://localhost:5173',
+      'http://localhost:5173/login',
+    );
+  }
+
   async getCurrentUser() {
     return await this.account.get();
   }
