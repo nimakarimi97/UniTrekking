@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+/*
 .browser-css head {
   display: none;
 }
@@ -84,7 +85,6 @@
 }
 .browser-css center {
   display: block;
-  /* special centering to be able to emulate the html4/netscape behaviour */
   text-align: -webkit-center;
 }
 .browser-css hr {
@@ -348,7 +348,6 @@
   margin: 0 __qem;
   font: -webkit-small-control;
   text-rendering: auto;
-  /* FIXME: Remove when tabs work with optimizeLegibility. */
   color: initial;
   letter-spacing: normal;
   word-spacing: normal;
@@ -640,7 +639,6 @@
   width: 44px;
   height: 23px;
   background-color: ButtonFace;
-  /* Same as native_theme_base. */
   border: 1px #a9a9a9 solid;
   padding: 1px 2px;
 }
@@ -844,7 +842,6 @@
   background-color: green;
   height: 100%;
   width: 50%;
-  /* should be removed later */
   -webkit-user-modify: read-only !important;
   box-sizing: border-box;
 }
@@ -947,7 +944,6 @@
 .browser-css ruby,
 .browser-css rt {
   text-indent: 0;
-  /* blocks used for ruby rendering should not trigger this */
 }
 .browser-css rt {
   line-height: normal;
@@ -1024,7 +1020,6 @@
   background: rgba(0, 0, 0, 0.1);
 }
 @page {
-  /* FIXME: Define the right default values for page properties. */
   size: auto;
   margin: auto;
   padding: 0px;
@@ -1035,4 +1030,4 @@
     -webkit-columns: auto !important;
     columns: auto !important;
   }
-}
+} */
