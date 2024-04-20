@@ -20,11 +20,7 @@ function Header() {
       slug: '/login',
       authRequired: !authStatus,
     },
-    {
-      name: 'Signup',
-      slug: '/signup',
-      authRequired: !authStatus,
-    },
+
     {
       name: 'All Posts',
       slug: '/all-posts',

@@ -9,7 +9,6 @@ import store from './store/store.js';
 import Home from './pages/Home.jsx';
 import Login from './pages/Login.jsx';
 import Protected from './components/AuthLayout.jsx';
-import Signup from './pages/Signup.jsx';
 import AllPosts from './pages/AllPosts.jsx';
 import AddHike from './pages/AddHike.jsx';
 import EditPost from './pages/EditPost.jsx';
@@ -32,14 +31,7 @@ const router = createBrowserRouter([
           </Protected>
         ),
       },
-      {
-        path: '/signup',
-        element: (
-          <Protected authentication={false}>
-            <Signup />
-          </Protected>
-        ),
-      },
+
       {
         path: '/all-posts',
         element: (
