@@ -1,9 +1,9 @@
 import authService from '../appwrite/auth';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
-import Button from '@/components/Button';
-import Input from '@/componentsInput';
-import Logo from '@/componentsLogo';
+import Button from '../components//Button';
+import Input from '../components/Input';
+import Logo from '../components/Logo';
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
 import { login as authLogin } from '../store/authSlice';
