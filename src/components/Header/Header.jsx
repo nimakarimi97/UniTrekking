@@ -101,6 +101,22 @@ export default function Header() {
             <ul className='flex grow justify-end flex-wrap items-center'>
               <li>
                 <Link
+                  to='/add-post'
+                  className='font-medium text-purple-600 hover:text-gray-200 px-4 py-3 flex items-center transition duration-150 ease-in-out'
+                >
+                  New Hike
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to='/all-posts'
+                  className='font-medium text-purple-600 hover:text-gray-200 px-4 py-3 flex items-center transition duration-150 ease-in-out'
+                >
+                  All Hikes
+                </Link>
+              </li>
+              <li>
+                <Link
                   to='/login'
                   className='font-medium text-purple-600 hover:text-gray-200 px-4 py-3 flex items-center transition duration-150 ease-in-out'
                 >
