@@ -1,14 +1,14 @@
 import Container from '../components/container/Container';
-import PostForm from '../components/post-form/PostForm';
+import HikeForm from '../components/hike-form/HikeForm';
 
-function AddPost() {
+function AddHike() {
   return (
     <div className='py-6'>
       <Container>
-        <PostForm />
+        <HikeForm />
       </Container>
     </div>
   );
 }
 
-export default AddPost;
+export default AddHike;

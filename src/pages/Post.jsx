@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 
 import appwriteService from '../appwrite/config';
@@ -37,7 +37,7 @@ function Post() {
   return post ? (
     <div className='py-8'>
       <Container>
-        <div className='w-full flex justify-center mb-4 relative border rounded-xl p-2'>
+        <div className='relative flex justify-center w-full p-2 mb-4 border rounded-xl'>
           <img
             src={appwriteService.getFilePreview(post.featuredImage)}
             alt={post.title}

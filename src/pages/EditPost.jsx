@@ -3,7 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import appwriteService from '../appwrite/config';
 import { useEffect } from 'react';
 import Container from '../components/container/Container';
-import PostForm from '../components/post-form/PostForm';
+import HikeForm from '../components/hike-form/HikeForm';
 
 function EditPost() {
   const [post, setPost] = useState(null);
@@ -25,7 +25,7 @@ function EditPost() {
   return (
     <div className='py-6'>
       <Container>
-        <PostForm post={post} />
+        <HikeForm post={post} />
       </Container>
     </div>
   );

@@ -9,11 +9,10 @@ function Home() {
 
   useEffect(() => {
     appwriteService.getPosts([]).then((posts) => {
-      if (posts) {
-        setPosts(posts.documents);
-      }
+      if (posts) setPosts(posts.documents);
     });
   }, []);
+
   if (posts.length === 0) {
     return (
       <div className='w-full py-8'>
