@@ -9,9 +9,9 @@ import store from './store/store.js';
 import Home from './pages/Home.jsx';
 import Login from './pages/Login.jsx';
 import Protected from './components/AuthLayout.jsx';
-import AllPosts from './pages/AllPosts.jsx';
+import AllHikes from './pages/AllHikes.jsx';
 import AddHike from './pages/AddHike.jsx';
-import EditPost from './pages/EditPost.jsx';
+import EditHike from './pages/EditHike.jsx';
 import Post from './pages/Post.jsx';
 
 const router = createBrowserRouter([
@@ -36,7 +36,7 @@ const router = createBrowserRouter([
         path: '/all-posts',
         element: (
           <Protected authentication>
-            <AllPosts />
+            <AllHikes />
           </Protected>
         ),
       },
@@ -52,7 +52,7 @@ const router = createBrowserRouter([
         path: '/edit-post/:slug',
         element: (
           <Protected authentication>
-            <EditPost />
+            <EditHike />
           </Protected>
         ),
       },

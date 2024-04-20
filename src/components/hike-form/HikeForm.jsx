@@ -10,13 +10,13 @@ import { useNavigate } from 'react-router-dom';
 
 // TODO move it to the AddHike.jsx
 
-export default function HikeForm({ post }) {
+export default function HikeForm({ hike }) {
   const { register, handleSubmit, watch, setValue, control, getValues } = useForm({
     defaultValues: {
-      tittle: post?.title || '',
-      slug: post?.slug || '',
-      content: post?.content || 'placeholder for post content',
-      status: post?.status || 'active',
+      tittle: hike?.title || '',
+      slug: hike?.slug || '',
+      content: hike?.content || 'placeholder for post content',
+      status: hike?.status || 'active',
     },
   });
 
@@ -24,12 +24,12 @@ export default function HikeForm({ post }) {
   const userData = useSelector((state) => state.auth.userData);
 
   const submit = async (data) => {
-    if (post) {
+    if (hike) {
       const file = data.image[0] ? await appwriteService.uploadFile(data.image[0]) : null;
 
-      if (file) appwriteService.deleteFile(post.featuredImage);
+      if (file) appwriteService.deleteFile(hike.featuredImage);
 
-      const dbPost = await appwriteService.updatePost(post.$id, {
+      const dbPost = await appwriteService.updatePost(hike.$id, {
         ...data,
         featuredImage: file ? file.$id : undefined,
       });
@@ -98,13 +98,13 @@ export default function HikeForm({ post }) {
           type='file'
           className='mb-4'
           accept='image/png, image/jpg, image/jpeg'
-          {...register('image', { required: !post })}
+          {...register('image', { required: !hike })}
         />
-        {post && (
+        {hike && (
           <div className='w-full mb-4'>
             <img
-              src={appwriteService.getFilePreview(post.featuredImage)}
-              alt={post.title}
+              src={appwriteService.getFilePreview(hike.featuredImage)}
+              alt={hike.title}
               className='rounded-lg'
             />
           </div>
@@ -115,8 +115,8 @@ export default function HikeForm({ post }) {
           className='mb-4'
           {...register('status', { required: true })}
         />
-        <Button type='submit' bgColor={post ? 'bg-green-500' : undefined} className='w-full'>
-          {post ? 'Update' : 'Submit'}
+        <Button type='submit' bgColor={hike ? 'bg-green-500' : undefined} className='w-full'>
+          {hike ? 'Update' : 'Submit'}
         </Button>
       </div>
     </form>
