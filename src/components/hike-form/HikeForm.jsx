@@ -7,6 +7,7 @@ import Select from '../Select';
 import appwriteService from '../../appwrite/config';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import TextArea from '../TextArea';
 
 // TODO move it to the AddHike.jsx
 
@@ -85,6 +86,10 @@ export default function HikeForm({ hike }) {
             setValue('slug', slugTransform(e.currentTarget.value), { shouldValidate: true });
           }}
         />
+
+        <Input label='Date' placeholder='Date' className='mb-4' type='date' />
+
+        <TextArea label='Description' placeholder='Description' className='mb-4' />
         {/* <RTE
                 label="Content: "
                 name="content"

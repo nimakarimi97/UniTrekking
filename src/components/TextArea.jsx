@@ -1,10 +1,7 @@
 import React, { useId } from 'react';
 import PropTypes from 'prop-types';
 
-const Input = React.forwardRef(function Input(
-  { label, type = 'text', className = '', ...props },
-  ref,
-) {
+const TextArea = React.forwardRef(function Input({ label, className = '', ...props }, ref) {
   const id = useId();
   return (
     <div className='w-full'>
@@ -13,9 +10,8 @@ const Input = React.forwardRef(function Input(
           {label}
         </label>
       )}
-      <input
+      <textarea
         className={`form-input w-full text-gray-300 ${className}`}
-        type={type}
         ref={ref}
         {...props}
         id={id}
@@ -24,10 +20,10 @@ const Input = React.forwardRef(function Input(
   );
 });
 
-Input.propTypes = {
+TextArea.propTypes = {
   label: PropTypes.string,
   type: PropTypes.string,
   className: PropTypes.string,
 };
 
-export default Input;
+export default TextArea;
