@@ -1,4 +1,5 @@
 import React, { useId } from 'react';
+import PropTypes from 'prop-types';
 
 const Input = React.forwardRef(function Input(
   { label, type = 'text', className = '', ...props },
@@ -8,7 +9,7 @@ const Input = React.forwardRef(function Input(
   return (
     <div className='w-full'>
       {label && (
-        <label htmlFor={id} className='inline-block mb-1 pl-1'>
+        <label htmlFor={id} className='inline-block pl-1 mb-1'>
           {label}
         </label>
       )}
@@ -22,5 +23,11 @@ const Input = React.forwardRef(function Input(
     </div>
   );
 });
+
+Input.propTypes = {
+  label: PropTypes.string,
+  type: PropTypes.string,
+  className: PropTypes.string,
+};
 
 export default Input;

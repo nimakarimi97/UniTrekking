@@ -1,11 +1,12 @@
 import React, { useId } from 'react';
+import PropTypes from 'prop-types';
 
-function Select({ options, label, className, ...props }, ref) {
+const Select = React.forwardRef(function Select({ options, label, className, ...props }, ref) {
   const id = useId();
   return (
     <div className='w-full'>
       {label && (
-        <label htmlFor={id} className='inline-block mb-1 pl-1'>
+        <label htmlFor={id} className='inline-block pl-1 mb-1'>
           {label}
         </label>
       )}
@@ -23,6 +24,12 @@ function Select({ options, label, className, ...props }, ref) {
       </select>
     </div>
   );
-}
+});
 
-export default React.forwardRef(Select);
+Select.propTypes = {
+  options: PropTypes.arrayOf(PropTypes.string).isRequired,
+  label: PropTypes.string,
+  className: PropTypes.string,
+};
+
+export default Select;

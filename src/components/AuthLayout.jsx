@@ -11,15 +11,14 @@ function Protected({ children, authentication = true }) {
   const [loader, setLoader] = useState(true);
 
   useEffect(() => {
-    if (authentication && authStatus !== authentication) {
-      navigate('/login');
-    } else if (!authentication && authStatus !== authentication) {
-      navigate('/');
-    }
+    if (authentication && authStatus !== authentication)
+      navigate('/login'); // for all pages required authentication
+    else if (!authentication && authStatus !== authentication) navigate('/'); // for login and sign up page
+
     setLoader(false);
   }, [authStatus, authentication, navigate]);
 
-  return loader ? null : <>{children}</>;
+  return loader ? 'Loading...' : <>{children}</>;
 }
 
 export default Protected;
@@ -28,9 +27,3 @@ Protected.propTypes = {
   children: PropTypes.node.isRequired,
   authentication: PropTypes.bool,
 };
-
-// if(true){
-//   if (false) {
-//     navigator("/login")
-//   }
-// }
