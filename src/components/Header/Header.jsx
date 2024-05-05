@@ -18,12 +18,6 @@ export default function Header() {
       authRequired: true,
     },
     {
-      name: 'Login',
-      slug: '/login',
-      authRequired: !authStatus,
-    },
-
-    {
       name: 'All Hikes',
       slug: '/all-hikes',
       authRequired: authStatus,
@@ -32,6 +26,23 @@ export default function Header() {
       name: 'Add Hike',
       slug: '/add-hike',
       authRequired: authStatus,
+    },
+    {
+      name: 'Who Are We?',
+      slug: '/about',
+      authRequired: true,
+    },
+    {
+      name: 'Contact Us',
+      slug: '/contact-us',
+      authRequired: true,
+    },
+
+    {
+      name: 'Login',
+      slug: '/login',
+      icon: 'login',
+      authRequired: !authStatus,
     },
   ];
 
@@ -56,6 +67,7 @@ export default function Header() {
                         onClick={() => navigate(item.slug)}
                         className='flex items-center px-4 py-3 font-medium text-purple-600 transition duration-150 ease-in-out hover:text-gray-200'
                       >
+                        {item.icon && <i className={`fa fa-${item.icon}`}></i>}
                         {item.name}
                       </button>
                     </li>

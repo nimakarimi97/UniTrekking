@@ -13,6 +13,8 @@ import AllHikes from './pages/AllHikes.jsx';
 import AddHike from './pages/AddHike.jsx';
 import EditHike from './pages/EditHike.jsx';
 import Hike from './pages/Hike.jsx';
+import About from './pages/About.jsx';
+import ContactUs from './pages/ContactUS.jsx';
 
 const router = createBrowserRouter([
   {
@@ -63,6 +65,14 @@ const router = createBrowserRouter([
             <Hike />
           </Protected>
         ),
+      },
+      {
+        path: '/about',
+        element: <About />,
+      },
+      {
+        path: '/contact-us',
+        element: <ContactUs />,
       },
     ],
   },

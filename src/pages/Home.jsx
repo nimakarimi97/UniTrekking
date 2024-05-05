@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import Container from '../components/container/Container';
 
-function Home() {
+export default function Home() {
   const [hikes, setHikes] = useState([]);
 
   useEffect(() => {
@@ -21,5 +21,3 @@ function Home() {
     </div>
   );
 }
-
-export default Home;
