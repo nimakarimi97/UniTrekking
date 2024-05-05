@@ -33,7 +33,7 @@ const router = createBrowserRouter([
       },
 
       {
-        path: '/all-posts',
+        path: '/all-hikes',
         element: (
           <Protected authentication>
             <AllHikes />
@@ -41,7 +41,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: '/add-post',
+        path: '/add-hike',
         element: (
           <Protected authentication>
             <AddHike />
@@ -49,7 +49,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: '/edit-post/:slug',
+        path: '/edit-hike/:slug',
         element: (
           <Protected authentication>
             <EditHike />
@@ -57,7 +57,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: '/post/:slug',
+        path: '/hike/:slug',
         element: (
           <Protected authentication>
             <Post />
