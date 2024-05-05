@@ -16,7 +16,7 @@ export default function HikeForm({ hike }) {
     defaultValues: {
       tittle: hike?.title || '',
       slug: hike?.slug || '',
-      content: hike?.content || 'placeholder for post content',
+      content: hike?.content || 'placeholder for hike content',
       status: hike?.status || 'active',
     },
   });
@@ -30,23 +30,23 @@ export default function HikeForm({ hike }) {
 
       if (file) appwriteService.deleteFile(hike.featuredImage);
 
-      const dbPost = await appwriteService.updatePost(hike.$id, {
+      const dbHike = await appwriteService.updateHike(hike.$id, {
         ...data,
         featuredImage: file ? file.$id : undefined,
       });
 
-      if (dbPost) {
-        navigate(`/post/${dbPost.$id}`);
+      if (dbHike) {
+        navigate(`/hike/${dbHike.$id}`);
       }
     } else {
       const file = await appwriteService.uploadFile(data.image[0]);
       if (file) {
         const fileId = file.$id;
         data.featuredImage = fileId;
-        const dbPost = await appwriteService.createPost({ ...data, userId: userData.$id });
+        const dbHike = await appwriteService.createHike({ ...data, userId: userData.$id });
 
-        if (dbPost) {
-          navigate(`/post/${dbPost.$id}`);
+        if (dbHike) {
+          navigate(`/hike/${dbHike.$id}`);
         }
       }
     }

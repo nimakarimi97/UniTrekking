@@ -12,7 +12,7 @@ function EditHike() {
 
   useEffect(() => {
     if (slug) {
-      appwriteService.getPost(slug).then((hike) => {
+      appwriteService.getHike(slug).then((hike) => {
         if (hike) setHike(hike);
         else navigate('/');
       });

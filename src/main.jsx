@@ -12,7 +12,7 @@ import Protected from './components/AuthLayout.jsx';
 import AllHikes from './pages/AllHikes.jsx';
 import AddHike from './pages/AddHike.jsx';
 import EditHike from './pages/EditHike.jsx';
-import Post from './pages/Post.jsx';
+import Hike from './pages/Hike.jsx';
 
 const router = createBrowserRouter([
   {
@@ -60,7 +60,7 @@ const router = createBrowserRouter([
         path: '/hike/:slug',
         element: (
           <Protected authentication>
-            <Post />
+            <Hike />
           </Protected>
         ),
       },

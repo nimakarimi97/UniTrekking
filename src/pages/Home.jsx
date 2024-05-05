@@ -4,11 +4,11 @@ import { useEffect } from 'react';
 import Container from '../components/container/Container';
 
 function Home() {
-  const [posts, setPosts] = useState([]);
+  const [hikes, setHikes] = useState([]);
 
   useEffect(() => {
-    appwriteService.getPosts([]).then((posts) => {
-      if (posts) setPosts(posts.documents);
+    appwriteService.getHikes([]).then((hikes) => {
+      if (hikes) setHikes(hikes.documents);
     });
   }, []);
 
@@ -16,7 +16,7 @@ function Home() {
     <div className='w-full py-8'>
       <Container>
         <h1>Home page</h1>
-        <p>number of hikes: {posts.length}</p>
+        <p>number of hikes: {hikes.length}</p>
       </Container>
     </div>
   );
