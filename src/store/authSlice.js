@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+// TODO: change name of status property to isAuthenticated
 const initialState = {
   status: false,
   userData: null,

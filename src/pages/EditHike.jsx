@@ -5,19 +5,16 @@ import { useEffect } from 'react';
 import Container from '../components/container/Container';
 import HikeForm from '../components/hike-form/HikeForm';
 
-function EditPost() {
-  const [post, setPost] = useState(null);
+function EditHike() {
+  const [hike, setHike] = useState(null);
   const { slug } = useParams();
   const navigate = useNavigate();
 
   useEffect(() => {
     if (slug) {
-      appwriteService.getPost(slug).then((post) => {
-        if (post) {
-          setPost(post);
-        } else {
-          navigate('/');
-        }
+      appwriteService.getHike(slug).then((hike) => {
+        if (hike) setHike(hike);
+        else navigate('/');
       });
     }
   }, [slug, navigate]);
@@ -25,10 +22,10 @@ function EditPost() {
   return (
     <div className='py-6'>
       <Container>
-        <HikeForm post={post} />
+        <HikeForm hike={hike} />
       </Container>
     </div>
   );
 }
 
-export default EditPost;
+export default EditHike;

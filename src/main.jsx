@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App.jsx';
-import './index.css';
+import './css/index.css';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './store/store.js';
@@ -9,10 +9,12 @@ import store from './store/store.js';
 import Home from './pages/Home.jsx';
 import Login from './pages/Login.jsx';
 import Protected from './components/AuthLayout.jsx';
-import AllPosts from './pages/AllPosts.jsx';
+import AllHikes from './pages/AllHikes.jsx';
 import AddHike from './pages/AddHike.jsx';
-import EditPost from './pages/EditPost.jsx';
-import Post from './pages/Post.jsx';
+import EditHike from './pages/EditHike.jsx';
+import Hike from './pages/Hike.jsx';
+import About from './pages/About.jsx';
+import ContactUs from './pages/ContactUS.jsx';
 
 const router = createBrowserRouter([
   {
@@ -33,15 +35,15 @@ const router = createBrowserRouter([
       },
 
       {
-        path: '/all-posts',
+        path: '/all-hikes',
         element: (
           <Protected authentication>
-            <AllPosts />
+            <AllHikes />
           </Protected>
         ),
       },
       {
-        path: '/add-post',
+        path: '/add-hike',
         element: (
           <Protected authentication>
             <AddHike />
@@ -49,20 +51,28 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: '/edit-post/:slug',
+        path: '/edit-hike/:slug',
         element: (
           <Protected authentication>
-            <EditPost />
+            <EditHike />
           </Protected>
         ),
       },
       {
-        path: '/post/:slug',
+        path: '/hike/:slug',
         element: (
           <Protected authentication>
-            <Post />
+            <Hike />
           </Protected>
         ),
+      },
+      {
+        path: '/about',
+        element: <About />,
+      },
+      {
+        path: '/contact-us',
+        element: <ContactUs />,
       },
     ],
   },
